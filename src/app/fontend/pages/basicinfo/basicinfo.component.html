@@ -1,0 +1,62 @@
+<div class="main">
+    <h2>Basic info</h2>
+    <form [formGroup]="formitem" (ngSubmit)="onSubmit()">
+        <label>Name</label>
+        <input type="text" name="fname" formControlName="fname" required /><br /><br />
+        <div *ngIf="formitem.controls['fname'].touched && formitem.controls['fname'].invalid">
+         <small *ngIf="formitem.controls['fname'].errors && formitem.controls['fname'].errors.required" [ngStyle]="styleobject()">
+           name field is required
+         </small>
+        </div>
+
+        <label>Email</label>
+        <input type="text" name="email" formControlName="email" required /><br /><br />
+        <div *ngIf="formitem.controls['email'].touched && formitem.controls['email'].invalid">
+         <small *ngIf="formitem.controls['email'].errors && formitem.controls['email'].errors.required" [ngStyle]="styleobject()">
+           name field is required
+         </small>
+         <div *ngIf="formitem.controls['email'].errors && formitem.controls['email'].errors.email">
+          enter an valid email
+         </div>
+        </div>
+
+
+        <label>Age</label>
+        <input type="number" name="age" formControlName="age" required/><br /><br />
+        <div *ngIf="formitem.controls['age'].touched && formitem.controls['age'].invalid">
+          <div *ngIf="formitem.controls['age'].errors && formitem.controls['age'].errors.required">
+           <small>
+               Age field is required
+           </small>
+          </div>
+        </div>
+
+        <label>Phone</label>
+        <input type="text" name="phone" formControlName="phone" required/><br /><br />
+        <div *ngIf="formitem.controls['phone'].touched && formitem.controls['phone'].invalid">
+          <div *ngIf="formitem.controls['phone'].errors && formitem.controls['phone'].errors.required">
+           <small>
+               Phone field is required
+           </small>
+          </div>
+          
+        </div>
+
+        <label>Nationality</label><br /><br />
+        <select name="country" formControlName="country">
+            <option selected>Select</option>
+            <option *ngFor="let country of countries" value="{{country.id}}">{{country.name}}</option>
+
+        </select><br /><br />
+        <label>Gender</label><br /><br />
+        Male
+        <input type="radio" name="gender" formControlName="gender" value="male"/>
+        Female
+        <input type="radio" name="gender" formControlName="gender" value="female"/><br /><br />
+        <label>Qulification</label><br /><br />
+        Graduate<input type="checkbox" name="gd" formControlName="gd"/><br /><br />
+        PostGraduate<input type="checkbox" name="pg" formControlName="pg"/><br /><br />
+        <input type="submit" value="submit"  [disabled]="!formitem.valid"/>
+
+    </form>
+</div>

@@ -1,0 +1,30 @@
+<div class="main">
+<button class="btn btn-danger" (click)="toggletable()">Toggle</button>
+<table class="table" [ngStyle]="buttonAction()">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Sub 1</th>
+        <th>Sub 2</th>
+        <th>total</th>
+        <td>Grade</td>
+      </tr>
+    </thead>
+    <tbody>
+      
+     
+      <tr *ngFor="let data of collection">
+        <td>{{data.name}}</td>
+        <td>{{data.sub1}}</td>
+        <td>{{data.sub2}}</td>
+        <td>{{(data.sub1 + data.sub2)%100}}</td>
+        <td >{{((data.sub1+data.sub2) > 80)?"A":((data.sub1+data.sub2) > 60)?"B":((data.sub1+data.sub2)>30)?"C":"D"}}</td>
+        <td><button ngClass="btn btn-primary" (click)="getdetails(data)">view</button></td>
+       
+        
+
+        
+      </tr>
+    </tbody>
+  </table>
+  </div>
