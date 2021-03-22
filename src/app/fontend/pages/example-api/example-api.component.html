@@ -1,0 +1,27 @@
+<div class="main">
+<div class="container" >
+  <div *ngIf="data?.length">
+  Loading ...
+  </div>
+ 
+    <table class="table">
+      <thead>
+        <tr>
+          <th>id</th>
+          <th>Body</th>
+          <th>title</th>
+        </tr>
+      </thead>
+      <tbody>
+        
+        <tr *ngFor="let data of posts">
+         
+          <td>{{data.id}}</td>
+          <td>{{data.body}}</td>
+          <td>{{data.title}}</td>
+        </tr>      
+       
+      </tbody>
+    </table>
+  </div>
+</div>

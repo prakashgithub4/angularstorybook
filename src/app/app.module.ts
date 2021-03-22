@@ -6,6 +6,9 @@ import { AppComponent } from './app.component';
 import {FontendModule} from './fontend/fontend.module';
 import {PagesComponent} from './fontend/pages/pages.component';
 import { BasictableComponent } from './pages/basictable/basictable.component';
+import { HttpClientModule } from '@angular/common/http';
+import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
+
 
 
 @NgModule({
@@ -16,6 +19,8 @@ import { BasictableComponent } from './pages/basictable/basictable.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
+    NgxSkeletonLoaderModule,
     FontendModule
   ],
   providers: [],
