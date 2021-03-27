@@ -1,0 +1,29 @@
+<div class="main">
+    <div class="container" >
+        
+      
+        <div [ngStyle]="{'display':loader == true?'block':'none','color':'red' }" class="loader">
+          
+        </div>
+        <table class="table" [ngStyle]="{'display':loader != true?'block':'none'}">
+          <thead>
+            <tr>
+              <th>id</th>
+              <th>Body</th>
+              <th>title</th>
+            </tr>
+          </thead>
+          <tbody>
+            
+            <tr *ngFor="let data of posts | paginate: config">
+             
+              <td>{{data.id}}</td>
+              <td>{{data.body}}</td>
+              <td>{{data.title}}</td>
+            </tr>      
+           
+          </tbody>
+        </table>
+        <pagination-controls (pageChange)="pageChanged($event)"></pagination-controls>
+      </div>
+    </div>

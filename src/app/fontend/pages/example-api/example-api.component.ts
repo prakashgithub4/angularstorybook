@@ -9,12 +9,14 @@ import{RestService} from '../../../rest.service';
 export class ExampleApiComponent implements OnInit {
    posts:any =[];
   constructor(private http:RestService) { }
-
+   loader = true
+   //loadercontrol = {'disply':'block'}
   ngOnInit(): void {
     this.http.getPost().subscribe((result)=>{
 
       this.posts = result;
      console.log(result);
+     this.loader =false;
     })
   }
 

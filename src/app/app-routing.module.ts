@@ -8,6 +8,7 @@ import{BasicinfoComponent} from './fontend/pages/basicinfo/basicinfo.component';
 import {BasictableComponent} from './fontend/pages/basictable/basictable.component';
 import {ServiceComponentComponent} from './fontend/pages/service-component/service-component.component'
 import {ExampleApiComponent} from "./fontend/pages/example-api/example-api.component";
+import {PaginationComponent} from "./fontend/pages/pagination/pagination.component";
 
 
 const routes: Routes = [
@@ -19,7 +20,8 @@ const routes: Routes = [
     {path:'basictable',component:BasictableComponent},
     {path:'basictable',component:BasictableComponent},
     {path:'service-component',component:ServiceComponentComponent},
-    {path:'servicewithapi',component:ExampleApiComponent}
+    {path:'servicewithapi',component:ExampleApiComponent},
+    {path:'pagination',component:PaginationComponent}
   
     
 

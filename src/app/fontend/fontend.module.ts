@@ -13,6 +13,9 @@ import { BasictableComponent } from './pages/basictable/basictable.component';
 import { ServiceComponentComponent } from './pages/service-component/service-component.component';
 import { ExampleApiComponent } from './pages/example-api/example-api.component';
 import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
+import { PaginationComponent } from './pages/pagination/pagination.component';
+import { NgxPaginationModule } from 'ngx-pagination';
+
 
 
 
@@ -20,13 +23,14 @@ import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 
 
 @NgModule({
-  declarations: [SidebarComponent, PagesComponent, HomeComponent, ServicesComponent, ClientsComponent, ContactComponent, BasicinfoComponent, BasictableComponent, ServiceComponentComponent, ExampleApiComponent],
+  declarations: [SidebarComponent, PagesComponent, HomeComponent, ServicesComponent, ClientsComponent, ContactComponent, BasicinfoComponent, BasictableComponent, ServiceComponentComponent, ExampleApiComponent, PaginationComponent],
   imports: [
     CommonModule,
     AppRoutingModule,
     FormsModule,
     NgxSkeletonLoaderModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgxPaginationModule
   ],
   exports:[SidebarComponent,PagesComponent,HomeComponent,ServicesComponent]
 })
